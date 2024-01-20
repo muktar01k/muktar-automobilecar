@@ -12,6 +12,7 @@ export default {
         Emoji:"url('/src/assets/IMAGE/emoji.png')",
         Emoji2:"url('/src/assets/IMAGE/Emoji2.png')"
       },
+      
     },
   },
   plugins: [],

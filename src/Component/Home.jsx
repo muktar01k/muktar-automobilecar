@@ -34,7 +34,7 @@ import { useState } from 'react'
 
 const Home = () => {
 
-const [Togglemodal, setTogglemodal] = useState(false)
+    const [Togglemodal, setTogglemodal] = useState(false)
 
     function Signup() {
         setTogglemodal(!Togglemodal)
@@ -44,16 +44,16 @@ const [Togglemodal, setTogglemodal] = useState(false)
     return (
         <div className="bg-[whitesmoke]">
             <div className="bg-Background bg-no-repeat bg-right h-[70rem]  ">
-                <nav className="flex justify-center gap-[35rem] h-[3rem] pt-[1.5rem] ">
+                <nav className="flex justify-center h-[3rem] pt-[1.5rem] sm:gap-[20rem] ">
                     <h1 className="font-semibold ">Muktar<sub>autos</sub></h1>
                     <div className="">
-                        <ul className="flex gap-[3rem]  ">
+                        <ul className="flex  sm:flex flex-col sm:gap-[1rem] ">
                             <li>Buy</li>
                             <li>Sell</li>
                             <li>Service & Repair</li>
                             <li> contact</li>
-                            <div onClick={Signup}  className="">
-                            <button className=" bg-[purple] w-[6rem] rounded-xl h-[2rem]">Sign in</button>
+                            <div onClick={Signup} className="">
+                                <button className=" bg-[purple] w-[6rem] rounded-xl h-[2rem]">Sign in</button>
                             </div>
                         </ul>
                     </div>
@@ -66,51 +66,52 @@ const [Togglemodal, setTogglemodal] = useState(false)
 
                                 <form className='ml-[3rem]  mt-[2rem]' action="">
                                     <div className="flex gap-[3rem]">
-                                    <div className="">
-                                        <p className='font-semibold text-[purple]'>First Name</p>
-                                        <input className='bg-[whitesmoke] w-[20rem] h-[3rem] rounded-lg border-4 border-purple-500' type="text" placeholder='First Name...' />
+                                        <div className="">
+                                            <p className='font-semibold text-[purple]'>First Name</p>
+                                            <input className='bg-[whitesmoke] w-[20rem] h-[3rem] rounded-lg border-4 border-purple-500' type="text" placeholder='First Name...' />
+                                        </div>
+                                        <div className="">
+                                            <p className='font-semibold text-[purple]'>Last Name</p>
+                                            <input className='bg-[whitesmoke] w-[20rem] h-[3rem] rounded-lg border-4 border-purple-500' type="text" placeholder='Last Name...' />
+                                        </div>
                                     </div>
-                                    <div className="">
-                                        <p className='font-semibold text-[purple]'>Last Name</p>
-                                        <input className='bg-[whitesmoke] w-[20rem] h-[3rem] rounded-lg border-4 border-purple-500' type="text" placeholder='Last Name...' />
-                                    </div>
-                                    </div>
-                                    
+
                                     <div className="mt-[2rem]">
-                                    <p className='font-semibold text-[purple]'>Email Address</p>
+                                        <p className='font-semibold text-[purple]'>Email Address</p>
                                         <input className='bg-[whitesmoke] w-[40rem] h-[3rem] rounded-lg border-4 border-purple-500 ' type="text" placeholder='Email Address...' />
                                     </div>
-                                    
+
                                 </form>
                             </div>
                         </div>
                     )
                 }
-                <div className="flex mt-[5rem] ">
-                    <div className="w-[29rem] ml-[7rem] mt-[7rem] ">
-                        <h2 className='text-2xl font-semibold'>Muktar</h2>
-                        <p className='text-[grey]'>Car Buying Made Easy!</p>
-                        <p className='text-[grey] pt-[2rem]'>Muktar has the best auto deals for their customers and aslo the best car for you, search by car,compare prices and find the perfect car for you,no matter what you budget</p>
-
-                        <button className='bg-[purple] text-[white] mt-[7rem] w-[8rem] h-[3rem] rounded-xl'> Get started</button>
-                        <button className='bg-[purple]  text-[white] mt-[7rem] w-[8rem]  ml-[2rem] h-[3rem] rounded-xl'>Explore More</button>
+                <div className="flex mt-[5rem] sm:flex flex-col ">
+                    <div className="w-[29rem] ml-[7rem] mt-[7rem] sm:w-[25rem] sm:mt-[8rem]">
+                        <h2 className='text-2xl font-semibold sm:text-7xl sm:ml-[7rem]'>Muktar</h2>
+                        <p className='text-[grey] sm:ml-[7rem] sm:text-2xl sm:mt-[0.5rem]'>Car Buying Made Easy!</p>
+                        <p className='text-[grey] pt-[2rem] sm:w-[30rem] sm:mr-[5rem]'>Muktar has the best auto deals for their customers and aslo the best car for you, search by car,compare prices and find the perfect car for you,no matter what you budget</p>
+                        <div className="sm:flex sm:justify-center">
+                            <button className='bg-[purple] text-[white] mt-[7rem] w-[8rem] h-[3rem] rounded-xl'> Get started</button>
+                            <button className='bg-[purple]  text-[white] mt-[7rem] w-[8rem]  ml-[2rem] h-[3rem] rounded-xl'>Explore More</button>
+                        </div>
                     </div>
-                    <div className="w-[40rem] mt-[2rem]">
+                    <div className="w-[40rem] mt-[2rem] sm:w-[35rem] sm:ml-[2rem]">
                         <img src={Camry} alt="" />
                     </div>
                 </div>
-                <div className="w-[40rem] ml-[20rem] mt-[10rem] ">
+                <div className="w-[40rem] ml-[20rem]  sm:w-[30rem] sm:ml-[4rem]">
                     <img src={Logos} alt="" />
                 </div>
             </div>
-            <div className=" ml-[5rem] mt-[3rem] flex justify-center">
+            <div className=" ml-[5rem] mt-[3rem] flex justify-center sm:flex sm:flex-col sm:mt-[9rem] sm:ml-[2rem]">
                 <img className='w-[35rem]' src={Car} alt="" />
 
                 <div className="w-[25rem] ]">
-                    <h1 className='text-xl font-semibold'>About Us</h1>
-                    <p className='text-[grey] pt-[2rem]'>Muktar has the best auto deals for their customers and also the best car for you.Search by car,Compare prices and find the perfect car for you.no matter what your budget</p>
-                    <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl'>Contact us</button>
-                    <img className='pt-[2rem]' src={Bmw} alt="" />
+                    <h1 className='text-xl font-semibold sm:ml-[13rem]'>About Us</h1>
+                    <p className='text-[grey] pt-[2rem] sm:w-[38rem]'>Muktar has the best auto deals for their customers and also the best car for you.Search by car,Compare prices and find the perfect car for you.no matter what your budget</p>
+                    <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[15rem]'>Contact us</button>
+                    <img className='pt-[2rem] sm:ml-[6rem]' src={Bmw} alt="" />
                 </div>
             </div>
             <div className="text-center mt-[3rem] ">
@@ -134,20 +135,20 @@ const [Togglemodal, setTogglemodal] = useState(false)
                     <img className='pt-[2rem]' src={Ewe} alt="" />
                 </div>
             </div>
-            <p className='text-[grey] ml-[35rem] mt-[5rem]'>Muktar the best auto deals for their customers and also the best car for you.</p>
+            <p className='text-[grey] ml-[35rem] mt-[5rem] sm:ml-[3rem]'>Muktar the best auto deals for their customers and also the best car for you.</p>
             <div className="flex gap-2 justify-center mt-[1rem] ">
                 <div className="">
-                    <div className="flex gap-2">
-                        <img className='w-[150px] h-[10.5rem]' src={Jeep1} alt="" />
+                    <div className="flex gap-2 sm:ml[1rem]">
+                        <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep1} alt="" />
                         <div className="">
-                            <img className='w-[150px] h-[10.5rem]' src={Jeep3} alt="" />
+                            <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep3} alt="" />
                         </div>
                     </div>
                     <div className="mt-[3rem]">
                         <div className="flex gap-2">
-                            <img className='w-[150px] h-[10.5rem]' src={Jeep4} alt="" />
+                            <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep4} alt="" />
                             <div className="">
-                                <img className='w-[150px] h-[10.5rem]' src={Jeep5} alt="" />
+                                <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep5} alt="" />
                             </div>
                         </div>
                     </div>
@@ -155,7 +156,7 @@ const [Togglemodal, setTogglemodal] = useState(false)
                 </div>
                 <div className="">
                     <div className="">
-                        <img className='w-[350px] h-[300px]' src={Jeep2} alt="" />
+                        <img className='w-[350px] h-[300px] sm:w-[300px] sm:h-[250px]' src={Jeep2} alt="" />
                     </div>
                     <div className="mt-[1rem]">
                         <img className='w-[360px]' src={Jeep7} alt="" />
@@ -167,9 +168,9 @@ const [Togglemodal, setTogglemodal] = useState(false)
                 <p>Muktar has the best auto deals for their</p>
                 <p>customers and also the best car for you</p>
             </div>
-            <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[10rem]'>Buy now</button>
-            <div className="flex object-left">
-                <div className="ml-[15rem] mt-[5rem]">
+            <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[10rem] sm:ml-[15rem]'>Buy now</button>
+            <div className="flex object-left ">
+                <div className="ml-[15rem] mt-[5rem] sm:ml-[10rem] ">
                     <p className='text-[grey] w-[17rem]'>Get a free,instant valuation so you know exactly how much you can put towards your next car.</p>
                     <div className="mt-[3rem] pl-[3rem] ">
                         <img className='w-[15rem]' src={Benz} alt="" />
@@ -184,7 +185,7 @@ const [Togglemodal, setTogglemodal] = useState(false)
             <div className="">
                 <div className="flex  justify-center">
                     <div className=" w-[35rem] h-[14rem] rounded-sm mt-[2rem]">
-                        <img className='w-[20rem] h-[14rem] ml-[20rem] ' src={White} alt="" />
+                        <img className='w-[20rem] h-[14rem] ml-[20rem] sm:hidden ' src={White} alt="" />
                         <div className="mt-[1rem] ">
                             <p className='text-[purple] font-bold pl-[8.5rem]'>SAVE TIME RESEARCHING</p>
                             <p className='text-[grey] w-[35rem] pl-[8.5rem]'>Narrow down your options with help from our experts.They review all makes and models to help you find the right car.</p>
