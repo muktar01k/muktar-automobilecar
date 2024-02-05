@@ -4,7 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
+  theme:{
     extend: {
       backgroundImage:{
         Background:"url('/src/assets/IMAGE/background.png')",
@@ -14,6 +14,9 @@ export default {
       },
       
     },
+    screens:{
+      "sm":"414px"
+    }
   },
   plugins: [],
 }

@@ -29,24 +29,36 @@ import Social from '../assets/IMAGE/social.png'
 import Number from '../assets/IMAGE/number.png'
 import Contact from '../assets/IMAGE/contact.png'
 import Location from '../assets/IMAGE/location.png'
+import Hamburger from '../assets/IMAGE/burger-menu.svg'
 import { useState } from 'react'
 
 
 const Home = () => {
 
     const [Togglemodal, setTogglemodal] = useState(false)
+    const [hamburger, setHamburger] =useState(false)
 
     function Signup() {
         setTogglemodal(!Togglemodal)
+    }
+
+    function Hambur() {
+       setHamburger(!hamburger)
     }
 
 
     return (
         <div className="bg-[whitesmoke]">
             <div className="bg-Background bg-no-repeat bg-right h-[70rem]  ">
-                <nav className="flex justify-center h-[3rem] pt-[1.5rem] sm:gap-[20rem] ">
+                <nav className="flex justify-center h-[3rem] pt-[1.5rem] sm:gap-[12rem] ">
                     <h1 className="font-semibold ">Muktar<sub>autos</sub></h1>
-                    <div className="">
+
+                    <div>
+         
+            <div onClick={Hambur} className="">x </div>
+            {hamburger && (
+       
+               <div  className="bg-[white] ">
                         <ul className="flex  sm:flex flex-col sm:gap-[1rem] ">
                             <li>Buy</li>
                             <li>Sell</li>
@@ -57,6 +69,12 @@ const Home = () => {
                             </div>
                         </ul>
                     </div>
+                )
+
+}   
+
+    </div>
+                   
                 </nav>
                 {
                     Togglemodal && (
@@ -85,70 +103,74 @@ const Home = () => {
                             </div>
                         </div>
                     )
+                   
                 }
                 <div className="flex mt-[5rem] sm:flex flex-col ">
-                    <div className="w-[29rem] ml-[7rem] mt-[7rem] sm:w-[25rem] sm:mt-[8rem]">
-                        <h2 className='text-2xl font-semibold sm:text-7xl sm:ml-[7rem]'>Muktar</h2>
-                        <p className='text-[grey] sm:ml-[7rem] sm:text-2xl sm:mt-[0.5rem]'>Car Buying Made Easy!</p>
-                        <p className='text-[grey] pt-[2rem] sm:w-[30rem] sm:mr-[5rem]'>Muktar has the best auto deals for their customers and aslo the best car for you, search by car,compare prices and find the perfect car for you,no matter what you budget</p>
-                        <div className="sm:flex sm:justify-center">
+                    <div className="w-[29rem]  mt-[7rem] sm:w-[25rem] sm:mt-[8rem]">
+                        <h2 className='text-2xl font-semibold sm:text-7xl sm:ml-[5rem]'>Muktar</h2>
+                        <p className='text-[grey] sm:ml-[5rem] sm:text-2xl sm:mt-[0.5rem]'>Car Buying Made Easy!</p>
+                        <p className='text-[grey] pt-[2rem] sm:w-[25rem] sm:ml-[1rem]'>Muktar has the best auto deals for their customers and aslo the best car for you, search by car,compare prices and find the perfect car for you,no matter what you budget</p>
+                        <div className="sm:flex sm:justify-center ">
                             <button className='bg-[purple] text-[white] mt-[7rem] w-[8rem] h-[3rem] rounded-xl'> Get started</button>
                             <button className='bg-[purple]  text-[white] mt-[7rem] w-[8rem]  ml-[2rem] h-[3rem] rounded-xl'>Explore More</button>
                         </div>
                     </div>
-                    <div className="w-[40rem] mt-[2rem] sm:w-[35rem] sm:ml-[2rem]">
+                    
+                    <div className="w-[30rem] mt-[2rem] sm:w-[25rem] sm:mr-[3rem]">
                         <img src={Camry} alt="" />
                     </div>
                 </div>
-                <div className="w-[40rem] ml-[20rem]  sm:w-[30rem] sm:ml-[4rem]">
+                <div className="w-[40rem] ml-[20rem]  sm:w-[20rem] sm:ml-[3rem]">
                     <img src={Logos} alt="" />
                 </div>
             </div>
-            <div className=" ml-[5rem] mt-[3rem] flex justify-center sm:flex sm:flex-col sm:mt-[9rem] sm:ml-[2rem]">
+            <div className=" ml-[5rem] mt-[3rem] flex justify-center sm:flex sm:flex-col sm:mt-[3rem] sm:ml-[1rem]">
                 <img className='w-[35rem]' src={Car} alt="" />
 
                 <div className="w-[25rem] ]">
-                    <h1 className='text-xl font-semibold sm:ml-[13rem]'>About Us</h1>
-                    <p className='text-[grey] pt-[2rem] sm:w-[38rem]'>Muktar has the best auto deals for their customers and also the best car for you.Search by car,Compare prices and find the perfect car for you.no matter what your budget</p>
-                    <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[15rem]'>Contact us</button>
-                    <img className='pt-[2rem] sm:ml-[6rem]' src={Bmw} alt="" />
+                    <h1 className='text-xl font-semibold sm:ml-[10rem]'>About Us</h1>
+                    <p className='text-[grey] pt-[2rem] sm:w-[25rem]'>Muktar has the best auto deals for their customers and also the best car for you.Search by car,Compare prices and find the perfect car for you.no matter what your budget</p>
+                    <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[9rem]'>Contact us</button>
+                    <img className='pt-[2rem] sm:ml-[2rem] sm:w-[20rem]' src={Bmw} alt="" />
                 </div>
             </div>
+            
             <div className="text-center mt-[3rem] ">
                 <h3 className='text-xl text-[purple] '>Why buy from Muktar auto ?</h3>
                 <p className='text-[grey]'>peace of mind, every step of the way</p>
             </div>
-            <div className="flex justify-center gap-[0.1rem] mt-[2rem]">
+            <div className="flex justify-center gap-[0.1rem] mt-[2rem]  sm:gap-[1rem]">
                 <div className="bg-[white] w-[19rem] pt-[3rem] rounded-xl">
                     <h4 className='text-[purple] font-bold pl-[1rem]'>PAY THE RIGHT PRICE</h4>
                     <p className='text-[grey] pl-[1rem]'>We make it easy for you to find a great deal by showing you how the price compares to similar cars on the market.</p>
                     <img className='pt-[2rem]' src={Leave} alt="" />
                 </div>
-                <div className="bg-[grey] w-[19rem] pt-[3rem] rounded-xl">
-                    <h4 className='text-[purple] font-bold pl-[1rem]'>FREE HISTORY CHECKS</h4>
+                <div className="bg-[grey] w-[19rem] pt-[3rem] rounded-xl sm:hidden sm:w-[15rem] ">
+                    <h4 className='text-[purple] font-bold pl-[1rem] '>FREE HISTORY CHECKS</h4>
                     <p className='text-slate-600 pl-[1rem]'>Every car has passed a free basic history check,we'll never advertise a car that's recorded as stolen,scrapped or written off beyound repair.</p>
                     <img className='pt-[2rem]' src={Acc} alt="" />
                 </div>
-                <div className="bg-slate-300 w-[19rem] pt-[3rem] rounded-xl ">
+                <div className="bg-slate-300 w-[19rem] pt-[3rem] rounded-xl  ">
                     <h4 className='text-[purple] font-bold pl-[1rem]'>SELLERS YOU CAN TRUST</h4>
                     <p className='text-slate-600 pl-[1rem]'>Read dealer reviews from like-minded car buyers so you can feel confident you're buying from someone you trust.</p>
                     <img className='pt-[2rem]' src={Ewe} alt="" />
                 </div>
             </div>
-            <p className='text-[grey] ml-[35rem] mt-[5rem] sm:ml-[3rem]'>Muktar the best auto deals for their customers and also the best car for you.</p>
+           
+            <p className='text-[grey] ml-[35rem] mt-[5rem] sm:ml-[0.5rem]'>Muktar the best auto deals for their customers and also the best car for you.</p>
             <div className="flex gap-2 justify-center mt-[1rem] ">
                 <div className="">
-                    <div className="flex gap-2 sm:ml[1rem]">
-                        <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep1} alt="" />
+                    <div className="flex  sm:ml[1rem]">
+                        <img className='w-[150px] h-[10.5rem] sm:hidden' src={Jeep1} alt="" />
                         <div className="">
-                            <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep3} alt="" />
+                            <img className='w-[150px] h-[10.5rem] sm:w-[130px] sm:h-[9rem] sm:ml-[2rem] ' src={Jeep3} alt="" />
                         </div>
                     </div>
                     <div className="mt-[3rem]">
                         <div className="flex gap-2">
-                            <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep4} alt="" />
+                            <img className='w-[150px] h-[10.5rem]   sm:w-[130px] sm:h-[9rem] sm:ml-[2rem] ' src={Jeep4} alt="" />
                             <div className="">
-                                <img className='w-[150px] h-[10.5rem] sm:w-[110px]' src={Jeep5} alt="" />
+                                <img className='w-[150px] h-[10.5rem]  sm:hidden' src={Jeep5} alt="" />
                             </div>
                         </div>
                     </div>
@@ -156,75 +178,78 @@ const Home = () => {
                 </div>
                 <div className="">
                     <div className="">
-                        <img className='w-[350px] h-[300px] sm:w-[300px] sm:h-[250px]' src={Jeep2} alt="" />
+                        <img className='w-[350px] h-[300px] sm:w-[220px] sm:h-[180px] sm:pr-[2rem]' src={Jeep2} alt="" />
                     </div>
                     <div className="mt-[1rem]">
-                        <img className='w-[360px]' src={Jeep7} alt="" />
+                        <img className='w-[360px] sm:w-[200px]  ' src={Jeep7} alt="" />
                     </div>
                 </div>
 
             </div>
-            <div className="text-[grey] text-center mt-[1rem]">
+            <div className="text-[grey] text-center mt-[1rem] sm:pt-[2rem] sm:mr-[2rem]">
                 <p>Muktar has the best auto deals for their</p>
                 <p>customers and also the best car for you</p>
             </div>
-            <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[10rem] sm:ml-[15rem]'>Buy now</button>
+            <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[10rem] sm:ml-[10rem] '>Buy now</button>
             <div className="flex object-left ">
-                <div className="ml-[15rem] mt-[5rem] sm:ml-[10rem] ">
-                    <p className='text-[grey] w-[17rem]'>Get a free,instant valuation so you know exactly how much you can put towards your next car.</p>
-                    <div className="mt-[3rem] pl-[3rem] ">
-                        <img className='w-[15rem]' src={Benz} alt="" />
+                <div className="ml-[15rem] mt-[5rem] sm:ml-[2rem] sm:mt-[4rem]  ">
+                    <p className='text-[grey] w-[17rem] sm:w-[10rem]'>Get a free,instant valuation so you know exactly how much you can put towards your next car.</p>
+                    <div className="mt-[3rem] pl-[3rem]  sm:pl-[1rem] sm:mt-[1rem]">
+                        <img className='w-[15rem] sm:w-[13rem]' src={Benz} alt="" />
                     </div>
 
                 </div>
                 <div className="">
-                    <img className='w-[20rem]' src={Gwagon} alt="" />
-                    <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[3rem]'>value my car</button>
+                    <img className='w-[20rem] sm:w-[15rem] sm:pt-[2rem] sm:pr-[1rem]' src={Gwagon} alt="" />
+                    <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[3rem] sm:ml-[2rem]'>value my car</button>
                 </div>
             </div>
             <div className="">
-                <div className="flex  justify-center">
+                <div className="flex  justify-center sm:flex sm:flex-col">
                     <div className=" w-[35rem] h-[14rem] rounded-sm mt-[2rem]">
                         <img className='w-[20rem] h-[14rem] ml-[20rem] sm:hidden ' src={White} alt="" />
                         <div className="mt-[1rem] ">
-                            <p className='text-[purple] font-bold pl-[8.5rem]'>SAVE TIME RESEARCHING</p>
-                            <p className='text-[grey] w-[35rem] pl-[8.5rem]'>Narrow down your options with help from our experts.They review all makes and models to help you find the right car.</p>
+                            <p className='text-[purple] font-bold pl-[8.5rem] sm:pl-[8rem] '>SAVE TIME RESEARCHING</p>
+                            <p className='text-[grey] w-[35rem] pl-[8.5rem] sm:pl-[2.5rem] sm:w-[25rem]'>Narrow down your options with help from our experts.They review all makes and models to help you find the right car.</p>
 
                         </div>
-                        <button className='bg-[purple] text-[white] mt-[3rem] ml-[8.5rem] w-[8rem] h-[3rem] rounded-xl'>Read Reviews</button>
+                        <button className='bg-[purple] text-[white] mt-[3rem] ml-[8.5rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[2rem]'>Read Reviews</button>
                     </div>
 
                     <div className="mt-[5rem] ">
-                        <img className='w-[30rem] h-[25rem] ' src={Party} alt="" />
+                        <img className='w-[30rem] h-[25rem] sm:ml-[3rem] sm:w-[20rem] sm:h-[20rem]' src={Party} alt="" />
                     </div>
 
                 </div>
 
             </div>
-            <p className='ml-[18rem] mt-[5rem] text-2xl'>Best deals for you</p>
+            <p className='ml-[18rem] mt-[5rem] text-2xl sm:ml-[7rem]'>Best deals for you</p>
             <div className="">
-                <div className="grid grid-cols-3  m-[6rem]">
-                    <div className="bg-[white] w-[20rem] h-[23rem] p-[2rem] rounded-sm">
+                <div className="  m-[6rem] sm:flex sm:flex-col sm:justify-center">
+                    <div className="bg-[white] w-[20rem] h-[23rem] p-[2rem] rounded-sm sm:w-[15rem]">
                         <img className='w-[15rem] bg-[grey] ' src={Toyota} alt="" />
                         <p className='pl-[2rem] text-[grey]'>Toyota Camry 2021 white</p>
                         <div className="grid grid-cols-2 pt-[2rem]">
-                            <p className='bg-[grey] w-[6rem]'>Foreign used</p>
-                            <p className='bg-[grey] w-[6rem]'>340B0km</p>
+                            <p className='bg-[grey] w-[6rem] sm:w-[5rem]'>Foreign used</p>
+                            <p className='bg-[grey] w-[6rem] sm:w-[5rem]'>340B0km</p>
                             <p className='bg-[grey] w-[6rem] mt-[1rem]'>N9,000,000</p>
                         </div>
 
 
                     </div>
-                    <div className="bg-[white] w-[20rem] h-[23rem] ml-[2rem]  p-[2rem] rounded-sm">
+                    <button className='bg-[purple] text-[white] mt-[3rem] ml-[10rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[3rem]'>Read more</button>
+                    <div className="bg-[white] w-[20rem] h-[23rem]  p-[2rem] rounded-sm sm:w-[15rem] sm:mt-[2rem]">
                         <img className='w-[15rem] bg-[grey] ' src={Cardilac} alt="" />
                         <p className='pl-[2rem] text-[grey]'>Toyota Camry 2021 white</p>
                         <div className="grid grid-cols-2 pt-[2rem]">
-                            <p className='bg-[grey] w-[6rem]'>Foreign used</p>
-                            <p className='bg-[grey] w-[6rem]'>340B0km</p>
+                            <p className='bg-[grey] w-[6rem] sm:w-[5rem]'>Foreign used</p>
+                            <p className='bg-[grey] w-[6rem] sm:w-[5rem]'>340B0km</p>
                             <p className='bg-[grey] w-[6rem] mt-[1rem]'>N9,000,000</p>
                         </div>
                     </div>
-                    <div className="bg-[white] w-[20rem] h-[23rem] ml-[2rem] p-[2rem] rounded-sm">
+                    <button className='bg-[purple] text-[white] mt-[3rem] ml-[10rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[3rem]'>Read more</button>
+
+                    <div className="bg-[white] w-[20rem] h-[23rem]  p-[2rem] rounded-sm sm:hidden">
                         <img className='w-[15rem] bg-[grey] ' src={BenzCar} alt="" />
                         <p className='pl-[2rem] text-[grey]'>Toyota Camry 2021 white</p>
                         <div className="grid grid-cols-2 pt-[2rem]">
@@ -234,11 +259,10 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <button className='bg-[purple] text-[white] mt-[3rem] ml-[10rem] w-[8rem] h-[3rem] rounded-xl'>Read more</button>
-                    <button className='bg-[purple] text-[white] mt-[3rem] ml-[10rem] w-[8rem] h-[3rem] rounded-xl'>Read more</button>
-                    <button className='bg-[purple] text-[white] mt-[3rem] ml-[10rem] w-[8rem] h-[3rem] rounded-xl'>Read more</button>
+                    
+                    <button className='bg-[purple] text-[white] mt-[3rem] ml-[5rem] w-[8rem] h-[3rem] rounded-xl sm:hidden'>Read more</button>
 
-                    <div className="bg-[white] w-[20rem] h-[20rem] ml-[4rem] mt-[3rem] p-[2rem] rounded-sm">
+                    <div className="bg-[white] w-[20rem] h-[23rem]  p-[2rem] rounded-sm sm:w-[15rem] sm:hidden">
                         <img className='w-[15rem] bg-[grey] ml-[2rem]' src={BMJeep} alt="" />
                         <p className='pl-[2rem] text-[grey]'>Toyota Camry 2021 white</p>
                         <div className="grid grid-cols-2 pt-[2rem]">
@@ -247,7 +271,7 @@ const Home = () => {
                             <p className='bg-[grey] w-[6rem] mt-[1rem]'>N9,000,000</p>
                         </div>
                     </div>
-                    <div className="bg-[white] w-[20rem] h-[20rem] ml-[4rem] mt-[3rem] p-[2rem] rounded-sm">
+                    <div className="bg-[white] w-[20rem] h-[23rem]  p-[2rem] rounded-sm sm:w-[15rem] sm:hidden">
                         <img className='w-[15rem] bg-[grey] ' src={Audi} alt="" />
                         <p className='pl-[2rem] text-[grey]'>Toyota Camry 2021 white</p>
                         <div className="grid grid-cols-2 pt-[2rem]">
@@ -256,7 +280,7 @@ const Home = () => {
                             <p className='bg-[grey] w-[6rem] mt-[1rem]'>N9,000,000</p>
                         </div>
                     </div>
-                    <div className="bg-[white] w-[20rem] h-[20rem] ml-[4rem] mt-[3rem] p-[2rem] rounded-sm">
+                    <div className="bg-[white] w-[20rem] h-[23rem]  p-[2rem] rounded-sm sm:w-[15rem] sm:hidden">
                         <img className='w-[15rem] bg-[grey] ' src={ToyoJeep} alt="" />
                         <p className='pl-[2rem] text-[grey]'>Toyota Camry 2021 white</p>
                         <div className="grid grid-cols-2 pt-[2rem]">
