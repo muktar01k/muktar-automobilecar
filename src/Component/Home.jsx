@@ -1,15 +1,6 @@
-import Camry from '../assets/IMAGE/camry.png'
+
 import Logos from '../assets/IMAGE/Logos.png'
-import Car from '../assets/IMAGE/Carup.png'
-import Bmw from '../assets/IMAGE/Bmw.png'
-import Leave from '../assets/IMAGE/leave.png'
-import Acc from '../assets/IMAGE/acc.png'
-import Ewe from '../assets/IMAGE/ewe.png'
-import Jeep1 from '../assets/IMAGE/jeep1.png'
 import Jeep2 from '../assets/IMAGE/jeep2.png'
-import Jeep3 from '../assets/IMAGE/jeep3.png'
-import Jeep4 from '../assets/IMAGE/jeep4.png'
-import Jeep5 from '../assets/IMAGE/jeep5.png'
 import Jeep7 from '../assets/IMAGE/jeep7.png'
 import Benz from '../assets/IMAGE/benz.png'
 import Gwagon from '../assets/IMAGE/G-wagon.png'
@@ -31,50 +22,69 @@ import Contact from '../assets/IMAGE/contact.png'
 import Location from '../assets/IMAGE/location.png'
 import Hamburger from '../assets/IMAGE/burger-menu.svg'
 import { useState } from 'react'
+import { AboutUs, BuyFromUs, MuktarAutos } from '../Shared/Data'
+import { About, CamryCars, Section } from '../Shared/Cards'
+import { Link } from 'react-router-dom'
+
 
 
 const Home = () => {
 
     const [Togglemodal, setTogglemodal] = useState(false)
-    const [hamburger, setHamburger] =useState(false)
+    const [hamburger, setHamburger] = useState(true)
 
     function Signup() {
         setTogglemodal(!Togglemodal)
     }
 
     function Hambur() {
-       setHamburger(!hamburger)
+        setHamburger(!hamburger)
     }
 
 
     return (
         <div className="bg-[whitesmoke]">
             <div className="bg-Background bg-no-repeat bg-right h-[70rem]  ">
-                <nav className="flex justify-center h-[3rem] pt-[1.5rem] sm:gap-[12rem] ">
-                    <h1 className="font-semibold ">Muktar<sub>autos</sub></h1>
+                <nav className="flex justify-center  h-[3rem] pt-[1.5rem] sm:gap-[9rem] lg:gap-[55rem]   ">
+                    <h1 className="font-semibold -[] ">Muktar<sub>autos</sub></h1>
 
-                    <div>
-         
-            <div onClick={Hambur} className="">x </div>
-            {hamburger && (
-       
-               <div  className="bg-[white] ">
-                        <ul className="flex  sm:flex flex-col sm:gap-[1rem] ">
-                            <li>Buy</li>
-                            <li>Sell</li>
-                            <li>Service & Repair</li>
-                            <li> contact</li>
-                            <div onClick={Signup} className="">
-                                <button className=" bg-[purple] w-[6rem] rounded-xl h-[2rem]">Sign in</button>
+                    <div className=''>
+
+                        <div onClick={Hambur} className=" ml-[3rem] w-[5rem] lg:hidden">
+                            <img src={Back} alt="" />
+                        </div>
+                        {hamburger && (
+
+                            <div className="bg-[white]  mt-[0.5rem] sm:absolute">
+                                <ul className="lg:flex sm:flex flex-col sm:gap-[1rem] w-[10rem] lg:show ">
+                                    <Link to='/'>Buy</Link>
+                                    <Link to='/'>Sell</Link>
+                                    <Link to='/'>About</Link>
+                                    <Link to='/'>Contact us</Link>
+                                    <div onClick={Signup} className="">
+                                        <button className=" bg-[purple] w-[6rem] rounded-xl h-[2rem]">Sign in</button>
+                                    </div>
+                                </ul>
+
                             </div>
-                        </ul>
+                                        
+                            //        <div className="bg-[white] ">
+                            //        <ul className="flex  sm:flex flex-col sm:gap-[1rem] ">
+                            //            <li>Buy</li>
+                            //            <li>Sell</li>
+                            //            <li>Service & Repair</li>
+                            //            <li> contact</li>
+                            //            <div onClick={Signup} className="">
+                            //                <button className=" bg-[purple] w-[6rem] rounded-xl h-[2rem]">Sign in</button>
+                            //            </div>
+                            //        </ul>
+                            //    </div>
+                        )
+
+                        }
+
                     </div>
-                )
 
-}   
-
-    </div>
-                   
                 </nav>
                 {
                     Togglemodal && (
@@ -103,9 +113,14 @@ const Home = () => {
                             </div>
                         </div>
                     )
-                   
+
                 }
-                <div className="flex mt-[5rem] sm:flex flex-col ">
+
+                {
+                    MuktarAutos.map((MuktarAuto) => (<CamryCars {...MuktarAuto} />))
+                }
+
+                {/* <div className="flex mt-[5rem] sm:flex flex-col sm:static">
                     <div className="w-[29rem]  mt-[7rem] sm:w-[25rem] sm:mt-[8rem]">
                         <h2 className='text-2xl font-semibold sm:text-7xl sm:ml-[5rem]'>Muktar</h2>
                         <p className='text-[grey] sm:ml-[5rem] sm:text-2xl sm:mt-[0.5rem]'>Car Buying Made Easy!</p>
@@ -115,16 +130,21 @@ const Home = () => {
                             <button className='bg-[purple]  text-[white] mt-[7rem] w-[8rem]  ml-[2rem] h-[3rem] rounded-xl'>Explore More</button>
                         </div>
                     </div>
-                    
+
                     <div className="w-[30rem] mt-[2rem] sm:w-[25rem] sm:mr-[3rem]">
                         <img src={Camry} alt="" />
                     </div>
-                </div>
+                </div> */}
                 <div className="w-[40rem] ml-[20rem]  sm:w-[20rem] sm:ml-[3rem]">
                     <img src={Logos} alt="" />
                 </div>
             </div>
-            <div className=" ml-[5rem] mt-[3rem] flex justify-center sm:flex sm:flex-col sm:mt-[3rem] sm:ml-[1rem]">
+
+            {
+                AboutUs.map((AboutU) => (<About {...AboutU} />))
+            }
+
+            {/* <div className=" ml-[5rem] mt-[3rem] flex justify-center sm:flex sm:flex-col sm:mt-[3rem] sm:ml-[1rem]">
                 <img className='w-[35rem]' src={Car} alt="" />
 
                 <div className="w-[25rem] ]">
@@ -133,13 +153,18 @@ const Home = () => {
                     <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl sm:ml-[9rem]'>Contact us</button>
                     <img className='pt-[2rem] sm:ml-[2rem] sm:w-[20rem]' src={Bmw} alt="" />
                 </div>
-            </div>
-            
+            </div> */}
+
             <div className="text-center mt-[3rem] ">
                 <h3 className='text-xl text-[purple] '>Why buy from Muktar auto ?</h3>
                 <p className='text-[grey]'>peace of mind, every step of the way</p>
             </div>
-            <div className="flex justify-center gap-[0.1rem] mt-[2rem]  sm:gap-[1rem]">
+
+            {
+                BuyFromUs.map((BuyFromU) => (<Section {...BuyFromU} />))
+            }
+
+            {/* <div className="flex justify-center gap-[0.1rem] mt-[2rem]  sm:gap-[1rem]">
                 <div className="bg-[white] w-[19rem] pt-[3rem] rounded-xl">
                     <h4 className='text-[purple] font-bold pl-[1rem]'>PAY THE RIGHT PRICE</h4>
                     <p className='text-[grey] pl-[1rem]'>We make it easy for you to find a great deal by showing you how the price compares to similar cars on the market.</p>
@@ -155,11 +180,16 @@ const Home = () => {
                     <p className='text-slate-600 pl-[1rem]'>Read dealer reviews from like-minded car buyers so you can feel confident you're buying from someone you trust.</p>
                     <img className='pt-[2rem]' src={Ewe} alt="" />
                 </div>
-            </div>
-           
+            </div> */}
+
             <p className='text-[grey] ml-[35rem] mt-[5rem] sm:ml-[0.5rem]'>Muktar the best auto deals for their customers and also the best car for you.</p>
             <div className="flex gap-2 justify-center mt-[1rem] ">
-                <div className="">
+
+
+                {
+
+                }
+                {/* <div className="">
                     <div className="flex  sm:ml[1rem]">
                         <img className='w-[150px] h-[10.5rem] sm:hidden' src={Jeep1} alt="" />
                         <div className="">
@@ -175,7 +205,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                </div>
+                </div> */}
                 <div className="">
                     <div className="">
                         <img className='w-[350px] h-[300px] sm:w-[220px] sm:h-[180px] sm:pr-[2rem]' src={Jeep2} alt="" />
@@ -188,7 +218,7 @@ const Home = () => {
             </div>
             <div className="text-[grey] text-center mt-[1rem] sm:pt-[2rem] sm:mr-[2rem]">
                 <p>Muktar has the best auto deals for their</p>
-                <p>customers and also the best car for you</p>
+                {/* <p>customers and also the best car for you</p> */}
             </div>
             <button className='bg-[purple] text-[white] mt-[3rem] w-[8rem] h-[3rem] rounded-xl ml-[10rem] sm:ml-[10rem] '>Buy now</button>
             <div className="flex object-left ">
@@ -259,7 +289,7 @@ const Home = () => {
                         </div>
 
                     </div>
-                    
+
                     <button className='bg-[purple] text-[white] mt-[3rem] ml-[5rem] w-[8rem] h-[3rem] rounded-xl sm:hidden'>Read more</button>
 
                     <div className="bg-[white] w-[20rem] h-[23rem]  p-[2rem] rounded-sm sm:w-[15rem] sm:hidden">
